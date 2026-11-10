@@ -1,2 +1,80 @@
-# Project1
-Registration and Login form for Quiz.
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>লগইন</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+<div class="wrap">
+<button class="theme" id="themeBtn" type="button" aria-label="Toggle theme"><i class="fa-solid fa-sun"></i></button>
+<div class="card" id="card">
+
+<section id="login">
+<h1>লগইন</h1>
+<p class="sub">মোবাইল নম্বর, ইমেইল অথবা ক্যান্ডিডেট আইডি দিয়ে প্রবেশ করুন।</p>
+<form id="f" novalidate>
+<div class="alert" id="alert" role="alert"></div>
+		
+<div class="tabs" role="tablist">
+		<button type="button" role="tab" class="tab on" data-mode="contact" aria-selected="true">Mobile / Email</button>
+		<button type="button" role="tab" class="tab" data-mode="cid" aria-selected="false">Candidate ID</button>
+</div>
+		
+<div>
+		<label for="id" id="idLabel">Mobile / Email<span class="req">*</span></label>
+		<input id="id" placeholder="01XXXXXXXXX বা email@example.com" autocomplete="username">
+		<div class="hint" id="idHint" hidden>ক্যান্ডিডেট আইডি আপনার রেজিস্ট্রেশন নিশ্চিতকরণ বার্তায় দেওয়া আছে।</div>
+		<div class="err"></div>
+</div>
+		
+<div>
+		<label for="pw">Password <span class="req">*</span></label>
+		<div class="pw">
+		<input id="pw" type="password" placeholder="Password" autocomplete="current-password">
+				<button type="button" id="eye" aria-label="Show password"><i class="fa-solid fa-eye"></i></button>
+		</div>
+		
+		<div class="hint" id="caps" hidden>Caps Lock চালু আছে</div><div class="err"></div>
+</div>
+		
+<div class="row">
+		<label class="check" for="rem">
+		<input type="checkbox" id="rem">আমাকে মনে রাখুন</label>
+		<a href="#forgot" id="toForgot">পাসওয়ার্ড ভুলে গেছেন?</a>
+</div>
+<button class="btn" id="go" type="submit">Log in</button>
+		
+</form>
+		
+<p class="foot">Don't have an account? <a href="#register">Register</a></p>
+
+</section>
+
+<section id="reset">
+		<h1>পাসওয়ার্ড রিসেট</h1>
+		<p class="sub">আপনার মোবাইল বা ইমেইল দিন, আমরা রিসেট কোড পাঠাব।</p>
+		<form id="rf" novalidate>
+				<div class="alert" id="ralert" role="status"></div>
+				<div>
+						<label for="rid">Mobile / Email<span class="req">*</span></label>
+						<input id="rid" placeholder="01XXXXXXXXX বা email@example.com">
+						<div class="err"></div>
+				</div>
+				
+<button class="btn" id="rgo" type="submit">Send reset code</button>
+				
+</form>
+		
+<p class="foot"><a href="#login" id="toLogin">← লগইনে ফিরে যান</a></p>
+		
+</section>
+
+</div>
+</div>
+
+<script src="login.js"></script>
+</body>
+</html>
